@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.android.essentialoilsquiz.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/lavendarfield">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="20dp"
+            android:background="#90ffffff"
+            android:orientation="vertical">
+
+
+            <EditText
+                android:id="@+id/name_field"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:hint="Type your name here"
+                android:inputType="textCapWords" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="8dp"
+                android:paddingLeft="8dp"
+                android:text="Please answer the following questions.  Click Submit when finished."
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:text="1. What essential oil is best known for relaxation?"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/radio_lavendar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onRadioButtonClicked1"
+                    android:text="Lavendar" />
+
+                <RadioButton
+                    android:id="@+id/radio_rose"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onRadioButtonClicked1"
+                    android:text="Rose" />
+
+                <RadioButton
+                    android:id="@+id/radio_citronella"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onRadioButtonClicked1"
+                    android:text="Citronella" />
+
+                <RadioButton
+                    android:id="@+id/radio_cypress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onRadioButtonClicked1"
+                    android:text="Cypress" />
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:text="2. What essential oil(s) were given as a gift to baby Jesus?"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+
+            <CheckBox
+                android:id="@+id/cb_Cedarwood"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cedarwood"
+                android:textSize="16dp"
+                android:paddingLeft="24dp"
+                android:layout_marginTop="16dp" />
+
+            <CheckBox
+                android:id="@+id/cb_Myrhh"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Myrhh"
+                android:textSize="16dp"
+                android:paddingLeft="24dp"
+                android:layout_marginTop="16dp" />
+
+            <CheckBox
+                android:id="@+id/cb_Vetiver"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Vetiver"
+                android:textSize="16dp"
+                android:paddingLeft="24dp"
+                android:layout_marginTop="16dp" />
+            <CheckBox
+                android:id="@+id/cb_Frankensense"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Frankensense"
+                android:textSize="16dp"
+                android:paddingLeft="24dp"
+                android:layout_marginTop="16dp" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:text="3. True or False? Were essential oils used in ancient times?"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+
+            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/radio_true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onRadioButtonClicked3"
+                    android:text="True" />
+
+                <RadioButton
+                    android:id="@+id/radio_false"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onRadioButtonClicked3"
+                    android:text="False" />
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:text="4. What essential oil is a good muscle tightness?"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/radio_sandlewood"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onRadioButtonClicked4"
+                    android:text="Sandlewood" />
+
+                <RadioButton
+                    android:id="@+id/radio_wintergreen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onRadioButtonClicked4"
+                    android:text="Wintergreen" />
+
+                <RadioButton
+                    android:id="@+id/radio_peppermint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onRadioButtonClicked4"
+                    android:text="Peppermint" />
+
+                <RadioButton
+                    android:id="@+id/radio_basil"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onRadioButtonClicked4"
+                    android:text="Basil" />
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:text="5. What is your favorite essential oil?"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/eo_field"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:hint="Type your favorite essential oil here:"
+                android:inputType="text" />
+
+            <Button
+                android:id="@+id/button3_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="16dp"
+                android:background="@color/colorPrimaryDark"
+                android:onClick="submitAnswers"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:text="Submit Answers"
+                android:textColor="#ffffff" />
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</ScrollView>
