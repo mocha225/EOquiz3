@@ -8,8 +8,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/lavendarfield">
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -34,7 +33,7 @@
                 android:layout_height="wrap_content"
                 android:paddingBottom="8dp"
                 android:paddingLeft="8dp"
-                android:text="Please answer the following questions.  Click Submit when finished."
+                android:text="Please answer the following questions.  Click Submit Answers when finished."
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -50,6 +49,7 @@
                 android:textStyle="bold" />
 
             <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/onRadioButtonClick"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
@@ -58,28 +58,24 @@
                     android:id="@+id/radio_lavendar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:onClick="onRadioButtonClicked1"
                     android:text="Lavendar" />
 
                 <RadioButton
                     android:id="@+id/radio_rose"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:onClick="onRadioButtonClicked1"
                     android:text="Rose" />
 
                 <RadioButton
                     android:id="@+id/radio_citronella"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:onClick="onRadioButtonClicked1"
                     android:text="Citronella" />
 
                 <RadioButton
                     android:id="@+id/radio_cypress"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:onClick="onRadioButtonClicked1"
                     android:text="Cypress" />
             </RadioGroup>
 
@@ -150,14 +146,14 @@
                     android:id="@+id/radio_true"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:onClick="onRadioButtonClicked3"
+                    android:onClick="onRadioButtonClicked"
                     android:text="True" />
 
                 <RadioButton
                     android:id="@+id/radio_false"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:onClick="onRadioButtonClicked3"
+                    android:onClick="onRadioButtonClicked"
                     android:text="False" />
             </RadioGroup>
 
@@ -180,28 +176,28 @@
                     android:id="@+id/radio_sandlewood"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:onClick="onRadioButtonClicked4"
+                    android:onClick="onRadioButtonClicked"
                     android:text="Sandlewood" />
 
                 <RadioButton
                     android:id="@+id/radio_wintergreen"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:onClick="onRadioButtonClicked4"
+                    android:onClick="onRadioButtonClicked"
                     android:text="Wintergreen" />
 
                 <RadioButton
                     android:id="@+id/radio_peppermint"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:onClick="onRadioButtonClicked4"
+                    android:onClick="onRadioButtonClicked"
                     android:text="Peppermint" />
 
                 <RadioButton
                     android:id="@+id/radio_basil"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:onClick="onRadioButtonClicked4"
+                    android:onClick="onRadioButtonClicked"
                     android:text="Basil" />
             </RadioGroup>
 
@@ -210,18 +206,44 @@
                 android:layout_height="wrap_content"
                 android:paddingLeft="8dp"
                 android:paddingRight="8dp"
-                android:text="5. What is your favorite essential oil?"
+                android:text="5. What is Lemon Essential Oil's best use?"
                 android:textColor="#000000"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
-            <EditText
-                android:id="@+id/eo_field"
-                android:layout_width="wrap_content"
+            <RadioGroup
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="15dp"
-                android:hint="Type your favorite essential oil here:"
-                android:inputType="text" />
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/radio_cleaning"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onRadioButtonClicked"
+                    android:text="Cleaner" />
+
+                <RadioButton
+                    android:id="@+id/radio_freshener"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onRadioButtonClicked"
+                    android:text="Room Freshener" />
+
+                <RadioButton
+                    android:id="@+id/radion_pipe_cleaner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onRadioButtonClicked"
+                    android:text="Pipe Cleaner" />
+
+                <RadioButton
+                    android:id="@+id/radio_water"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onRadioButtonClicked"
+                    android:text="Water Additive" />
+            </RadioGroup>
 
             <Button
                 android:id="@+id/button3_id"
@@ -230,11 +252,12 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="16dp"
                 android:background="@color/colorPrimaryDark"
-                android:onClick="submitAnswers"
+                android:onClick="submitOrder"
                 android:paddingLeft="15dp"
                 android:paddingRight="15dp"
                 android:text="Submit Answers"
-                android:textColor="#ffffff" />
+                android:textColor="#ffffff"
+                />
 
 
         </LinearLayout>

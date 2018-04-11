@@ -2,6 +2,7 @@ package com.example.android.essentialoilsquiz;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.RadioButton;
 import android.widget.CheckBox;
@@ -16,7 +17,6 @@ import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
 
-//global integer for score
     int score = 0;
 
 
@@ -26,149 +26,155 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
+
     /**
-     * This method is called when the order button is clicked.
-     */
-    public void submitAnswers(View view) {
+     * This is to find the correct answers for the radio buttons. Questions 1.
+     **/
 
-        //To see if the Whipped Cream box is checked.
-        CheckBox whippedCreamCheckBox = (CheckBox) findViewById(R.id.cb_Whipped_Cream);
-        boolean hasWhippedCream = whippedCreamCheckBox.isChecked();
-
-        //To see if the ChocolateCheckBox is checked
-        CheckBox chocolateCheckBox = (CheckBox) findViewById(R.id.chocolate_checkbox);
-        boolean hasChocolate = chocolateCheckBox.isChecked();
-
-        //To calculate price
-        int price = calculatePrice(hasWhippedCream, hasChocolate);
-        EditText nameField = (EditText) findViewById(R.id.name_field);
-        String name = nameField.getText().toString();
-        String priceMessage= createOrderSummary(price, hasWhippedCream, hasChocolate, name);
-        displayMessage(priceMessage);
-
-
-        // get score
-        score = onCheckboxClicked() + radioButtonSelected() + editTextAnswer();
-        //make toast
-        Toast.makeText(this, "Your score is " + score + "!", Toast.LENGTH_SHORT).show();
-    }
-
-
-    /** This is to find the correct answer for question #1.
-    **/
-
-    public void onRadioButtonClicked1(View view) {
+    public void onRadioButtonClicked(View view) {
         // Is the button now checked?
-        boolean checked = ((RadioButton) view).isChecked();
+        RadioButton lavendar = (RadioButton) findViewById(R.id.radio_lavendar);
+        boolean lavendarChecked = lavendar.isChecked();
 
-        // Check which radio button was clicked
-        switch(view.getId()) {
-            case R.id.radio_lavendar:
-                if (checked)
-                    // Lavendar is the correct answer
-                    break;
-            case R.id.radio_rose:
-                if (checked)
-                    // wrong answer
-                    break;
-            case R.id.radio_citronella:
-                if (checked)
-                    // wrong answer
-                    break;
-            case R.id.radio_cypress:
-                if (checked)
-                    // wrong answer
-                    break;
+        RadioButton rose = (RadioButton) findViewById(R.id.radio_rose);
+        boolean roseChecked = rose.isChecked();
+
+        RadioButton citronella = (RadioButton) findViewById(R.id.radio_citronella);
+        boolean citronellaChecked = citronella.isChecked();
+
+        RadioButton cypress = (RadioButton) findViewById(R.id.radio_cypress);
+        boolean cypressChecked = cypress.isChecked();
+
+        if (lavendarChecked) {
+            // Lavendar is the correct answer to question 1
+            score = score + 20;
+        }
+        if (roseChecked) {
+            score = score;
+        }
+        if (citronellaChecked) {
+            score = score;
+        }
+        if (cypressChecked) {
+            score = score;
+        }
+
+/**
+ * This is to find the correct answers for the checkboxes buttons. Questions 2.
+ **/
+
+        //To see if Cedarwood box checked.
+        CheckBox ceadarwoodCheckBox = (CheckBox) findViewById(R.id.cb_Cedarwood);
+        boolean hasCedarwood = ceadarwoodCheckBox.isChecked();
+
+        //To see if Myrhh box checked.
+        CheckBox myrhhCheckBox = (CheckBox) findViewById(R.id.cb_Myrhh);
+        boolean hasMrryh = myrhhCheckBox.isChecked();
+
+        //to see if Vetiver box checked.
+        CheckBox vetiverCheckBox = (CheckBox) findViewById(R.id.cb_Vetiver);
+        boolean hasVetiver = vetiverCheckBox.isChecked();
+
+        CheckBox frankensenseCheckBox = (CheckBox) findViewById(R.id.cb_Frankensense);
+        boolean hasFrankensense = frankensenseCheckBox.isChecked();
+
+        if (hasMrryh && hasFrankensense) {
+            score = score + 20;
+        }else
+            score = score;
+
+
+/**
+ * This is to find the correct answers for the radio buttons. Questions 3.
+ **/
+        // Q3 Is the button now checked?
+        RadioButton radioTrue = (RadioButton) findViewById(R.id.radio_true);
+        boolean radioTrueChecked = radioTrue.isChecked();
+
+        RadioButton radioFalse = (RadioButton) findViewById(R.id.radio_false);
+        boolean radioFalseChecked = radioFalse.isChecked();
+
+
+        if (radioTrueChecked) {
+            // True is the correct answer to question 3
+            score = score + 20;
+        }
+        if (radioFalseChecked) {
+            score = score;
+        }
+
+/**
+ * This is to find the correct answers for the radio buttons. Questions 4.
+ **/
+        // Is the button now checked?
+        RadioButton basil = (RadioButton) findViewById(R.id.radio_basil);
+        boolean basilChecked = basil.isChecked();
+
+        RadioButton sandlewood = (RadioButton) findViewById(R.id.radio_sandlewood);
+        boolean sandlewoodChecked = sandlewood.isChecked();
+
+        RadioButton wintergreen = (RadioButton) findViewById(R.id.radio_wintergreen);
+        boolean wintergreenChecked = wintergreen.isChecked();
+
+        RadioButton peppermint = (RadioButton) findViewById(R.id.radio_peppermint);
+        boolean peppermintChecked = peppermint.isChecked();
+
+        if (basilChecked) {
+            // Basil is the correct answer to question 4
+            score = score + 20;
+            }
+        if (sandlewoodChecked) {
+            score = score;
+        }
+        if (wintergreenChecked) {
+            score = score;
+        }
+        if (peppermintChecked) {
+            score = score;
+        }
+/**
+ * This is to find the correct answers for the radio buttons. Questions 5.
+ **/
+        // Is the button now checked?
+        RadioButton cleaning = (RadioButton) findViewById(R.id.radio_cleaning);
+        boolean cleaningChecked = cleaning.isChecked();
+
+        RadioButton pipeClean = (RadioButton) findViewById(R.id.radion_pipe_cleaner);
+        boolean pipeCleanChecked = pipeClean.isChecked();
+
+        RadioButton roomFreshener = (RadioButton) findViewById(R.id.radio_freshener);
+        boolean roomFreshenerChecked = roomFreshener.isChecked();
+
+        RadioButton waterAdditive = (RadioButton) findViewById(R.id.radio_water);
+        boolean waterAdditiveChecked = waterAdditive.isChecked();
+
+                if (cleaningChecked) {
+                    //Cleaning is the correct answer to question 5
+                    score = score + 20;
+                }
+        if (pipeCleanChecked) {
+            score = score;
+        }
+        if (roomFreshenerChecked) {
+            score = score;
+        }
+        if (waterAdditiveChecked) {
+            score = score;
+        }
+        }
+
+/**Displays the final score. First, method displays the given score.
+ *
+ */
+private void submitOrder () {
+    Toast.makeText(this, "You scored " + score + "%!", Toast.LENGTH_SHORT).show();
+}
+
+
         }
 
 
-            /** Question number two: Check which boxes are button clicked.  Two boxes should be checked. This method is called when the correct boxes are checked.
-        **/
-
-            public void checkbox(View view){
-//To see if Cedarwood box checked.
-            CheckBox ceadarwoodCheckBox= (CheckBox) findViewById(R.id.cb_Cedarwood);
-            boolean hasCederwood = ceadarwoodCheckBox.isChecked();
-
-            //To see if Myrhh box checked.
-            CheckBox myrhhCheckBox= (CheckBox) findViewById(R.id.cb_Myrhh);
-            boolean hasMrryh = myrhhCheckBox.isChecked();
-
-            //to see if Vetiver box checked.
-            CheckBox vetiverCheckBox= (CheckBox) findViewById(R.id.cb_Vetiver);
-            boolean hasVetiver = vetiverCheckBox.isChecked();
-
-            CheckBox frankensenseCheckBox= (CheckBox) findViewById(R.id.cb_Frankensense);
-            boolean hasFrankensense = frankensenseCheckBox.isChecked();
-            }
-
-        /** Question number 3 finding the right answer.  The answer is true.
-         *
-         */
-
-        public void onRadioButtonClicked3(View view) {
-            // Is the button now checked?
-            boolean checked2 = ((RadioButton) view).isChecked();
-
-            // Check which radio button was clicked
-            switch(view.getId()) {
-                case R.id.radio_true:
-                    if (checked)
-                        // True is the correct answer
-                        break;
-                case R.id.radio_false:
-                    if (checked)
-                        // wrong answer
-                        break;
-            }
-
-
-            /**Question number 4 finding the right answer.  The answer is Basil.
-             *
-             */
-            public void onRadioButtonClicked4(View view) {
-                // Is the button now checked?
-                boolean checked = ((RadioButton) view).isChecked();
-
-            switch(view.getId()) {
-                case R.id.radio_sandlewood:
-                    if (checked)
-                        // wrong answer.
-                        break;
-                case R.id.radio_wintergreen:
-                    if (checked)
-                        // wrong answer
-                        break;
-                case R.id.radio_peppermint:
-                    if (checked)
-                        // wrong answer
-                        break;
-                case R.id.radio_basil:
-                    if (checked)
-                        // Basil is the correct answer.
-                        break;
-
-/**Question number 5.  There is no wrong answer.  They just have to type in a name of an essential oil.
- *
- *
- */
-
-private void displayname(String) {
-    TextView
-                }
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-}
